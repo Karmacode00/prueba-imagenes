@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <div>
+            <!--Login-->
+            <div id="loggedIn">
+                <p id="username"></p>
+                <input id="logout" onclick="logoutWithFirebase()" type="button" value="LOGOUT">
+            </div>
+            <!--Autentificación con mail-->
+            <div id="loggedOut">
+                <input id="email" type="email">
+                <input id="password" type="password">
+                <input id="registerButton" onclick="registerWithFirebase()" type="button" value="REGISTER">
+                <input id="loginButton" onclick="loginWithFirebase()" type="button" value="LOGIN">
+
+            </div>
+<!--Contenedor de gif-->                                    
+<div id="gifContainer">
+</div>
+<!--Opción para enviar gif-->            
+<div>
+    <input id="gifArea" type="text"> <input id="sendGif" onclick="sendGif()" type="button" value="SEND GIF">
+</div>
+<!--Opción para enviar imagen-->
+<div>
+    <input id="photoFileSelector" type="file"> <input id="sendPhoto" type="button" onclick="sendPhotoToStorage()" value="SEND PHOTO">
+</div>
+
+
+
+<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyD53UmyhCIoPXKeHsylbJ94NoKU00SGoR0",
+    authDomain: "pruebas-8d8ee.firebaseapp.com",
+    databaseURL: "https://pruebas-8d8ee.firebaseio.com",
+    projectId: "pruebas-8d8ee",
+    storageBucket: "pruebas-8d8ee.appspot.com",
+    messagingSenderId: "43105684493"
+  };
+  firebase.initializeApp(config);
+</script>
+
+        <script src="app.js"></script>
+    </body>
+</html>
